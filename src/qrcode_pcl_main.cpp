@@ -1,6 +1,6 @@
 #include <memory>
 
-#include "qr_reader/qr_reader.hpp"
+#include "qr_reader/qrcode_pcl.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 int main( int argc, char * argv[])

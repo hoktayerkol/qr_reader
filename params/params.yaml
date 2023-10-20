@@ -1,0 +1,7 @@
+qr_reader_node:
+  ros__parameters:
+    debug_image: false
+    debug_marker: true
+    debug_computation_time: true
+    name_space: ''
+    use_sim_time: true

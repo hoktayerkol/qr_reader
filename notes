@@ -1,0 +1,2 @@
+ros2 run tf2_ros static_transform_publisher  0.069 -0.047 0.107 -1.5707 0 -1.5707 base_link camera_rgb_frame
+
