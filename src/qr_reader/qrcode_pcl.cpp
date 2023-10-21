@@ -34,14 +34,14 @@
 #include <ament_index_cpp/get_package_share_directory.hpp>
 
 // debug moda islem suresinide ekle
-namespace qr_reader_ns
+namespace qrcode_pcl_ns
 {
 
 using std::placeholders::_1;
 using std::placeholders::_2;
 using namespace std::chrono_literals;
 
-    QrReader::QrReader() : Node("qr_reader_node"), qrcode_msg_({}), start_time_{}
+    QrReader::QrReader() : Node("qrcode_pcl_node"), qrcode_msg_({}), start_time_{}
     {
         detection_pub_ = create_publisher<qrcode_msgs::msg::QrCode>("qrcode_detection", 10);
         marker_pub_ = create_publisher<visualization_msgs::msg::Marker>("qrcode_marker", 1);
@@ -263,4 +263,4 @@ using namespace std::chrono_literals;
 
     } // QrReader::convert_positions_
 
-} // namespace qr_reader_ns
+} // namespace qrcode_pcl_ns

@@ -7,9 +7,9 @@ int main( int argc, char * argv[])
 {
 
     rclcpp::init(argc, argv);
-    auto node_qr_reader = std::make_shared<qr_reader_ns::QrReader>();
+    auto node_qrcode_pcl = std::make_shared<qrcode_pcl_ns::QrReader>();
 
-    rclcpp::spin(node_qr_reader);
+    rclcpp::spin(node_qrcode_pcl);
 
     rclcpp::shutdown();
     

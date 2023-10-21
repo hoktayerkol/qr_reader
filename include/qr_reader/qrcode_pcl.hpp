@@ -21,7 +21,7 @@
 
 
 
-namespace qr_reader_ns
+namespace qrcode_pcl_ns
 {
     class QrReader: public rclcpp::Node
     {

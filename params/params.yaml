@@ -1,7 +1,15 @@
-qr_reader_node:
+qrcode_pcl_node:
   ros__parameters:
-    debug_image: false
+    debug_image: true
     debug_marker: true
     debug_computation_time: true
+    name_space: ''
+    use_sim_time: true
+
+qrcode_image_node:
+  ros__parameters:
+    debug_image: true
+    debug_marker: true
+    debug_computation_time: false
     name_space: ''
     use_sim_time: true

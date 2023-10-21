@@ -20,19 +20,28 @@ def generate_launch_description():
         description='full path to params.yaml of qrcode_reader'
     )
     
-        
-    print (config)
-    node=Node(
+    qrcode_pcl_node=Node(
         package = 'qr_reader',
-        name = 'qr_reader_node',
-        executable = 'qr_reader_node',
+        name = 'qrcode_pcl_node',
+        executable = 'qrcode_pcl',
         #parameters = [qr_reader_params_file]
         parameters = [config]
         #parameters = [{"debug": False}]
     )
 
+    qrcode_image_node=Node(
+        package = 'qr_reader',
+        name = 'qrcode_image_node',
+        executable = 'qrcode_image',
+        parameters = [qr_reader_params_file]
+        #parameters = [config]
+        #parameters = [{"debug": False}]
+    )
+
     ld = LaunchDescription()
     ld.add_action(declare_qr_reader_params_file_cmd)
-    ld.add_action(node)
+    #ld.add_action(qrcode_pcl_node)
+    ld.add_action(qrcode_image_node)
+
 
     return ld

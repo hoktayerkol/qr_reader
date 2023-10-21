@@ -60,6 +60,7 @@ include_directories(include ${OpenCV_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS})
 
 add_library(${PROJECT_NAME} SHARED 
   src/qr_reader/qrcode_pcl.cpp
+  src/qr_reader/qrcode_image.cpp
 )
 ament_target_dependencies(${PROJECT_NAME} ${dependencies})
 
@@ -70,10 +71,16 @@ add_executable(qrcode_pcl src/qrcode_pcl_main.cpp)
 ament_target_dependencies(qrcode_pcl ${dependencies})
 target_link_libraries(qrcode_pcl ${PROJECT_NAME})
 
+add_executable(qrcode_image src/qrcode_image_main.cpp)
+ament_target_dependencies(qrcode_image ${dependencies})
+target_link_libraries(qrcode_image ${PROJECT_NAME})
+
+
 
 install(TARGETS
   ${PROJECT_NAME}
   qrcode_pcl
+  qrcode_image
 	ARCHIVE DESTINATION lib
 	LIBRARY DESTINATION lib
 	RUNTIME DESTINATION lib/${PROJECT_NAME}
